@@ -7,7 +7,7 @@ import google.generativeai as genai
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://taskflow-1-2tt2.onrender.com"])
 
 # Configure Gemini API
 api_key = os.getenv("GEMINI_API_KEY")
