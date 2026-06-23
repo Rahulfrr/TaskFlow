@@ -1,0 +1,8 @@
+runtime: python312
+
+env_variables:
+  GEMINI_API_KEY: "placeholder"
+
+handlers:
+  - url: /.*
+    script: auto

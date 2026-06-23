@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow — AI Priority Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="brand-dot"></div>
+      <span>TaskFlow</span>
+    </div>
+    <span class="nav-tag">Powered by Gemini</span>
+  </nav>
+
+  <header class="hero">
+    <h1>Plan smarter.<br>Miss nothing.</h1>
+    <p>Drop in your tasks. Let AI tell you what to do first.</p>
+  </header>
+
+  <main class="content">
+    <section class="panel left-panel">
+      <div class="panel-header">
+        <h2>Your Tasks</h2>
+        <span class="task-count" id="taskCount">0 tasks</span>
+      </div>
+
+      <div class="input-card">
+        <div class="field">
+          <label>Task name</label>
+          <input type="text" id="taskName" placeholder="e.g. Submit assignment" autocomplete="off">
+        </div>
+        <div class="field">
+          <label>Deadline</label>
+          <input type="datetime-local" id="taskDeadline">
+        </div>
+        <div class="field">
+          <label>Effort level</label>
+          <div class="effort-group">
+            <button class="effort-btn active" data-effort="quick" onclick="setEffort('quick')">⚡ Quick Win</button>
+            <button class="effort-btn" data-effort="medium" onclick="setEffort('medium')">🧩 Medium</button>
+            <button class="effort-btn" data-effort="deep" onclick="setEffort('deep')">🧠 Deep Focus</button>
+          </div>
+        </div>
+        <button class="btn-add" onclick="addTask()">+ Add Task</button>
+      </div>
+
+      <ul class="task-list" id="tasks">
+        <li class="empty-state">No tasks yet. Add one above.</li>
+      </ul>
+
+      <button class="btn-primary" id="prioritizeBtn" onclick="prioritizeTasks()">
+        <span class="btn-icon">✦</span> Prioritize with AI
+      </button>
+    </section>
+
+    <section class="panel right-panel">
+      <div class="panel-header">
+        <h2>AI Priority Order</h2>
+      </div>
+      <div class="results" id="results">
+        <div class="empty-results">
+          <div class="empty-icon">✦</div>
+          <p>Add tasks and click prioritize</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
