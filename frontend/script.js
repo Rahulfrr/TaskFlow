@@ -106,7 +106,7 @@ async function prioritizeTasks() {
     btn.disabled = true;
 
     try {
-        const response = await fetch('http://localhost:5000/prioritize', {
+        const response = await fetch('https://taskflow-i5j6.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ tasks })
